@@ -14,7 +14,6 @@ export const signinHandler = async ({login, password}) => {
 }
 export const checkHandler = async () => {
     try{
-        console.log(await $authHost.get('api/user/auth'))
         const {data} = await $authHost.get('api/user/auth')
         localStorage.setItem('token', data.token)
         return jwt_decode(data.token)

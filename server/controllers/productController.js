@@ -1,7 +1,8 @@
-const {Product, Category} = require('../models/product-model')
+const {Product} = require('../models/product-model')
 const uuid = require('uuid')
 const path = require('path')
 const { Op } = require('sequelize')
+const ApiError = require('../error/ApiError')
 class ProductController {
     async create(req, res, next) {
         try {
@@ -29,8 +30,17 @@ class ProductController {
         }
     }
     async get(req, res, next) {
-        const product = await Product.findAll()
-        return res.json(product)
+        const {title, id} = req.params
+        if (title){
+            const product = await Product.findOne({where: {title}})
+            return res.json(product)
+        }
+        if (id){
+           const product = await Product.findOne({where: {title}})
+           return res.json(product)
+        }
+        return next(ApiError.internal('Params error'))
+        
     }
 
     async get_all(req, res, next) {

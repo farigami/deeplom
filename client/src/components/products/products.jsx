@@ -6,19 +6,16 @@ import { getProducts } from "../../http/productAPI"
 
 const Products = () => {
     const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true)
     useEffect(() => {
-
-        getProducts().then(({ data }) => {
-            console.log(data)
+        getProducts().then(({data}) => {
             setProducts(data)
         })
     }, [])
 
     return (
         <div className="cards">
-             {products.length ? products.map(product =>
-                           <Card product={product} />
-                         ) : null}
+             {products.length && products.map(product =><Card product={product} /> ) }
         </div>
     )
 }

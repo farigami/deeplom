@@ -1,4 +1,3 @@
-const { FLOAT } = require('sequelize')
 const sequelize = require('../db')
 const {DataTypes} = require('sequelize')
 

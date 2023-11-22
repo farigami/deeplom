@@ -8,7 +8,8 @@ import { Context } from './index';
 import { observer } from 'mobx-react-lite';
 import CartModal from './components/modals/cart-modal';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-
+import Footer from './components/footer/footer';
+import notFound from './components/404/404';
 
 
 const App = observer(() => {
@@ -23,9 +24,11 @@ const App = observer(() => {
         if (localStorage.getItem('cart') === 'null'){
           localStorage.setItem('cart', [])
           user.setCart([])
+          return
         }else if (localStorage.getItem('cart').length === 0){
           localStorage.setItem('cart', [])
           user.setCart([])
+          return
         }else{
           user.setCart(JSON.parse(localStorage.getItem('cart')))
         }}catch(e){}
@@ -41,8 +44,10 @@ const App = observer(() => {
           {!user.isAuth ? authRoutes.map(({path, Component}) => <Route key={path} path={path} element={ <Component />} exact/> ) : null}
           {user.isAdmin ? adminRoutes.map(({path, Component}) => <Route key={path} path={path} element={ <Component />} exact />) : null}
           {publicRoutes.map(({path, Component}) => <Route key={path} path={path} element={ <Component />} exact />)}
+       
         </Routes>
       </div>
+      <Footer />
     </React.Fragment>
   );
 })

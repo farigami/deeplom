@@ -8,7 +8,11 @@ export const addProduct = async (product) => {
 }
 
 export const getProducts = async () => {
-    const  data  = $host.get('/api/product/all')
-    console.log(data.title, 'hi')
+    const data = $host.get('/api/product/all')
+    return data
+}
+
+export const getProduct = async (title) => {
+    const data = $host.get('/api/product/find/' + title)
     return data
 }
