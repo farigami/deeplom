@@ -45,7 +45,7 @@ const Header = observer(() => {
             <div className="header__middle">
                 <ul>
                     {categories.length && categories.map(category =>
-                        <Link key={category.id} to={'/category/' + category.title}><li>{category.title}</li></Link>
+                        <Link key={category.id} to={'/category/' + category.slug}><li>{category.title}</li></Link>
                     )}
                 </ul>
             </div>

@@ -28,7 +28,8 @@ const CartModal = observer((props) => {
 
   const Submit = async () => {
     if (user.isAuth){
-      setOrderForm({ ...orderForm, name: user.login })
+      setOrderForm({ ...orderForm, name: user._user.login })
+      console.log(orderForm)
     }
     try {
       const { data, status } = await createOrder(orderForm)

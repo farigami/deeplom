@@ -35,7 +35,6 @@ const CreateProduct = ({ show, onHide }) => {
         formData.append('sale', sale)
         addProduct(formData).then(() => {
             onHide()
-            window.location.reload();
         })
     }
 

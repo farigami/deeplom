@@ -4,7 +4,13 @@
     padding: 1rem;
     border-radius: 16px;
     justify-content: space-between;
-
+    height: 100%;
+    &__data {
+        padding-left: 0.5rem;
+    }
+    img{
+        object-fit: contain;
+    }
     .data__title {
         font-size: 18px;
         font-weight: 700;

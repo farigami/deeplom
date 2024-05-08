@@ -9,11 +9,11 @@ const Product = () => {
     const params = useParams()
     const [product, setProduct] = useState([])
     useEffect(() => {
-
-        getProduct(params.title).then(({ data }) => {
+        
+        getProduct(params.slug).then(({ data }) => {
             setProduct(data)
         })
-    }, [params.title])
+    }, [params.slug])
     return (
         <div className="product">
             <img src={process.env.REACT_APP_API_URL + product.image} width='250' height='250' alt="" />

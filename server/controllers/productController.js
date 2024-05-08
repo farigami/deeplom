@@ -30,21 +30,17 @@ class ProductController {
         }
     }
     async get(req, res, next) {
-        const {title, id} = req.params
-        if (title){
-            const product = await Product.findOne({where: {title}})
+        const {slug} = req.params
+        console.log(slug)
+        if (slug){
+            const product = await Product.findOne({where: {slug}})
             return res.json(product)
-        }
-        if (id){
-           const product = await Product.findOne({where: {title}})
-           return res.json(product)
         }
         return next(ApiError.internal('Params error'))
         
     }
 
     async get_all(req, res, next) {
-        
         const products = await Product.findAll()
         return res.json(products)
     }

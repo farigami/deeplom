@@ -10,7 +10,7 @@ import CartModal from './components/modals/cart-modal';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import Footer from './components/footer/footer';
 import notFound from './components/404/404';
-
+import ControlledCarousel from './components/carousel/carousel';
 
 const App = observer(() => {
   const {user} = useContext(Context)
@@ -38,6 +38,7 @@ const App = observer(() => {
   return (
     <React.Fragment>
       <Header />
+      <ControlledCarousel />
       <CartModal />
       <div className='container'>
         <Routes>

@@ -7,7 +7,6 @@ export const getOrders = async () => {
 
 export const getOrderProducts = async (id) => {
     const data = $authHost.get('api/order/get/' + id)
-    console.log(data)
     return data
 }
 

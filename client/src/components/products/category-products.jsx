@@ -8,7 +8,7 @@ const CategoryProducts = () => {
     const [products, setProducts] = useState([])
     const params = useParams()
     useEffect(() => {
-        getCategoryProducts(params.title).then((data) => {
+        getCategoryProducts(params.slug).then((data) => {
             setProducts(data)
         })
     }, [params])

@@ -12,7 +12,7 @@ export const getProducts = async () => {
     return data
 }
 
-export const getProduct = async (title) => {
-    const data = $host.get('/api/product/find/' + title)
+export const getProduct = async (slug) => {
+    const data = $host.get('/api/product/find/' + slug)
     return data
 }

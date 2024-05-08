@@ -10,7 +10,7 @@ export const getCategory = async () => {
     return data
 }
 
-export const getCategoryProducts = async (title) => {
-    const { data } = await $host.get('api/product/category/' + title)
+export const getCategoryProducts = async (slug) => {
+    const { data } = await $host.get('api/product/category/' + slug)
     return data
 }

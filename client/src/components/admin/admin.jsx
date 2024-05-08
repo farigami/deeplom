@@ -107,7 +107,7 @@ const Admin = () => {
                     </tbody>
                 </Table>
                 <div className='admin__panel'><h1>Товары</h1><button onClick={() => setProductVisible(true)}>Добавить товар</button></div>
-                <Table striped bordered hover  >
+                <Table responsive striped bordered >
                     <thead>
                         <tr>
                             <th>id</th>
