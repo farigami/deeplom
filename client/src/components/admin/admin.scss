@@ -1,19 +1,25 @@
-.admin__panel {
+.admin {
     display: flex;
-    justify-content: space-between;
-    button {
-        text-align: center;
-        padding: 0 10px !important;
-        border: none;
-        border-radius: 100px;
-        background-color: #8168f0 !important;
-        color: white !important;
-        font-size: 16px !important;
-        text-decoration: none;
+    flex-direction: column;
+
+    &__panel {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            text-align: center;
+            padding: 0 10px !important;
+            border: none;
+            border-radius: 100px;
+            background-color: #8168f0 !important;
+            color: white !important;
+            font-size: 16px !important;
+            text-decoration: none;
+        }
     }
 }
+
 
 table {
     padding: 1rem;
 }
-

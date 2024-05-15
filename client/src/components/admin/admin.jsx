@@ -52,7 +52,7 @@ const Admin = () => {
         <>
             <div className='admin'>
                 <div className='admin__panel'><h1>Заказы</h1></div>
-                <Table striped bordered hover >
+                <Table responsive striped bordered hover >
                     <thead>
                         <tr>
                             <th>id</th>
